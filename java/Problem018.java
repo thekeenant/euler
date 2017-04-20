@@ -1,5 +1,5 @@
-import java.util.*;
-import java.util.stream.IntStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Problem018 implements EulerProblem {
     private final static String triangleStr =
@@ -18,7 +18,7 @@ public class Problem018 implements EulerProblem {
             "91 71 52 38 17 14 91 43 58 50 27 29 48\n" +
             "63 66 04 68 89 53 67 30 73 16 69 87 40 31\n" +
             "04 62 98 27 23 09 70 98 73 93 38 53 60 04 23";
-    
+
     public static void main(String[] args) {
         EulerProblem.execute(new Problem018());
     }
