@@ -1,4 +1,4 @@
-module EulerProblem
+module EulerSolution
   def run
     raise 'Not implemented'
   end

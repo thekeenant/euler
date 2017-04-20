@@ -1,8 +1,8 @@
-public class Problem015 implements EulerProblem {
+public class Problem015 implements EulerSolution {
     private static final int size = 21;
 
     public static void main(String[] args) {
-        EulerProblem.execute(new Problem015());
+        EulerSolution.execute(new Problem015());
     }
 
     @Override

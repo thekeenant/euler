@@ -1,8 +1,8 @@
-load 'euler_problem.rb'
+load 'euler_solution.rb'
 require 'date'
 
 class Problem019
-  include EulerProblem
+  include EulerSolution
 
   def run
     count = 0

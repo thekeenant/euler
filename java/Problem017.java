@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.IntStream;
 
-public class Problem017 implements EulerProblem {
+public class Problem017 implements EulerSolution {
     private static final Map<Integer, String> base = new HashMap<Integer, String>() {{
         put(1, "one");
         put(2, "two");
@@ -34,7 +34,7 @@ public class Problem017 implements EulerProblem {
     }};
 
     public static void main(String[] args) {
-        EulerProblem.execute(new Problem017());
+        EulerSolution.execute(new Problem017());
     }
 
     @Override

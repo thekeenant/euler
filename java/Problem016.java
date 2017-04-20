@@ -1,8 +1,8 @@
 import java.math.BigInteger;
 
-public class Problem016 implements EulerProblem {
+public class Problem016 implements EulerSolution {
     public static void main(String[] args) {
-        EulerProblem.execute(new Problem016());
+        EulerSolution.execute(new Problem016());
     }
 
     @Override

@@ -1,10 +1,9 @@
-import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Problem206 implements EulerProblem {
+public class Problem206 implements EulerSolution {
     public static void main(String[] args) {
-        EulerProblem.execute(new Problem206());
+        EulerSolution.execute(new Problem206());
     }
 
     // 1_2_3_4_5_6_7_8_9_0

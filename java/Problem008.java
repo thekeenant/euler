@@ -1,4 +1,4 @@
-public class Problem008 implements EulerProblem {
+public class Problem008 implements EulerSolution {
     private static final String digits =
             "73167176531330624919225119674426574742355349194934" +
             "96983520312774506326239578318016984801869478851843" +
@@ -23,7 +23,7 @@ public class Problem008 implements EulerProblem {
     private static final int adjacent = 13;
     
     public static void main(String[] args) {
-        EulerProblem.execute(new Problem008());
+        EulerSolution.execute(new Problem008());
     }
 
     @Override

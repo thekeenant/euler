@@ -1,8 +1,8 @@
-load 'euler_problem.rb'
+load 'euler_solution.rb'
 require 'date'
 
 class Problem016
-  include EulerProblem
+  include EulerSolution
 
   def run
     (2**1000).digits.sum

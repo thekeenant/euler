@@ -1,6 +1,6 @@
-public class Problem012 implements EulerProblem {
+public class Problem012 implements EulerSolution {
     public static void main(String[] args) {
-        EulerProblem.execute(new Problem012());
+        EulerSolution.execute(new Problem012());
     }
 
     @Override

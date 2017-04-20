@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Problem010 implements EulerProblem {
+public class Problem010 implements EulerSolution {
     private static final long MAX_PRIME = 2_000_000;
 
     public static void main(String[] args) {
-        EulerProblem.execute(new Problem010());
+        EulerSolution.execute(new Problem010());
     }
 
     @Override
@@ -21,6 +21,7 @@ public class Problem010 implements EulerProblem {
             }
         }
 
+        // so threaded, totally makes a difference not really
         mults.parallelStream().forEach((mult) -> {
             for (int num = mult * 2; num < MAX_PRIME; num += mult) {
                 int index = num - 1;

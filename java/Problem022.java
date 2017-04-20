@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Problem022 implements EulerProblem {
+public class Problem022 implements EulerSolution {
     public static void main(String[] args) {
-        EulerProblem.execute(new Problem022());
+        EulerSolution.execute(new Problem022());
     }
 
     @Override

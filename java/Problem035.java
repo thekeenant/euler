@@ -2,9 +2,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Problem035 implements EulerProblem {
+public class Problem035 implements EulerSolution {
     public static void main(String[] args) {
-        EulerProblem.execute(new Problem035());
+        EulerSolution.execute(new Problem035());
     }
 
     @Override

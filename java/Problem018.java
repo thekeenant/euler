@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Problem018 implements EulerProblem {
+public class Problem018 implements EulerSolution {
     private final static String triangleStr =
             "75\n" +
             "95 64\n" +
@@ -20,7 +20,7 @@ public class Problem018 implements EulerProblem {
             "04 62 98 27 23 09 70 98 73 93 38 53 60 04 23";
 
     public static void main(String[] args) {
-        EulerProblem.execute(new Problem018());
+        EulerSolution.execute(new Problem018());
     }
 
     @Override

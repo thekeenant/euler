@@ -1,9 +1,9 @@
 import java.util.concurrent.TimeUnit;
 
-public interface EulerProblem {
-    static void execute(EulerProblem problem) {
+public interface EulerSolution {
+    static void execute(EulerSolution solution) {
         long startTime = System.nanoTime();
-        long result = problem.run();
+        long result = solution.run();
         long endTime = System.nanoTime();
 
         long duration = TimeUnit.MILLISECONDS.convert(endTime - startTime, TimeUnit.NANOSECONDS);
