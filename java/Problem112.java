@@ -5,11 +5,9 @@ public class Problem112 implements EulerProblem {
 
     @Override
     public long run() {
-        // Minimum bound given
-        long total = 100;
         long bouncy = 0;
-        
-        for (; total < Long.MAX_VALUE; total++) {
+
+        for (long total = 1; total < Long.MAX_VALUE; total++) {
             if (isBouncy(total)) {
                 bouncy++;
             }
@@ -17,12 +15,11 @@ public class Problem112 implements EulerProblem {
             double portion = (double) bouncy / (double) total;
 
             if (portion >= 0.99) {
-                break;
+                return total;
             }
         }
 
-
-        return total;
+        throw new RuntimeException("uh oh!");
     }
 
     private boolean isBouncy(long number) {
