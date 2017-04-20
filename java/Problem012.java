@@ -1,7 +1,12 @@
-public class Problem012 {
+public class Problem012 implements EulerProblem {
     public static void main(String[] args) {
+        EulerProblem.execute(new Problem012());
+    }
+
+    @Override
+    public long run() {
         long start = 1;
-        long big = 1_000_000_000;
+        long big = 1_000_000_000; // arbitrary big number
 
         for (long i = start; i < big; i++) {
             long triangleNum = 0;
@@ -23,9 +28,10 @@ public class Problem012 {
             }
 
             if (divisors > 500) {
-                System.out.println(triangleNum);
-                break;
+                return triangleNum;
             }
         }
+
+        throw new RuntimeException("nothing found wtf");
     }
 }

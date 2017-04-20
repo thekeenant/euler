@@ -1,10 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Problem010 {
-    private static final long MAX_PRIME = 2_000000;
+public class Problem010 implements EulerProblem {
+    private static final long MAX_PRIME = 2_000_000;
 
     public static void main(String[] args) {
+        EulerProblem.execute(new Problem010());
+    }
+
+    @Override
+    public long run() {
         List<Integer> mults = new ArrayList<>();
         List<Integer> nums = new ArrayList<>();
         for (int i = 0; i < MAX_PRIME - 1; i++) {
@@ -24,7 +29,7 @@ public class Problem010 {
         });
         nums.remove(0);
 
-        long sum = nums.parallelStream().mapToLong((num) -> num == null ? 0 : num).sum();
-        System.out.println(sum);
+        // wow threaded so cool
+        return nums.parallelStream().mapToLong((num) -> num == null ? 0 : num).sum();
     }
 }

@@ -1,5 +1,10 @@
-public class Problem014 {
+public class Problem014 implements EulerProblem {
     public static void main(String[] args) {
+        EulerProblem.execute(new Problem014());
+    }
+
+    @Override
+    public long run() {
         long max = 0;
         long num = 0;
         for (int i = 1; i <= 1_000_000; i++) {
@@ -9,11 +14,10 @@ public class Problem014 {
                 max = count;
             }
         }
-
-        System.out.println(num);
+        return num;
     }
 
-    private static long collatz(long n) {
+    private long collatz(long n) {
         long count = 1;
 
         long curr = n;

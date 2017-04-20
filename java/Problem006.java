@@ -1,5 +1,10 @@
-public class Problem006 {
+public class Problem006 implements EulerProblem {
     public static void main(String[] args) {
+        EulerProblem.execute(new Problem006());
+    }
+
+    @Override
+    public long run() {
         int sumSq = 0;
         int sqSum = 0;
 
@@ -9,7 +14,6 @@ public class Problem006 {
         }
 
         sqSum = (int) Math.pow(sqSum, 2);
-
-        System.out.println((sqSum - sumSq));
+        return sqSum - sumSq;
     }
 }

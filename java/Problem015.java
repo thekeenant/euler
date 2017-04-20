@@ -1,12 +1,16 @@
-public class Problem015 {
+public class Problem015 implements EulerProblem {
     private static final int size = 21;
 
     public static void main(String[] args) {
-        long paths = countPaths(0, 0, new long[size][size]);
-        System.out.printf("paths: %d\n", paths);
+        EulerProblem.execute(new Problem015());
     }
 
-    private static long countPaths(int i, int j, long[][] counts) {
+    @Override
+    public long run() {
+        return countPaths(0, 0, new long[size][size]);
+    }
+
+    private long countPaths(int i, int j, long[][] counts) {
         if (i >= size || j >= size) {
             return 0;
         }

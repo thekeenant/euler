@@ -1,4 +1,4 @@
-public class Problem008 {
+public class Problem008 implements EulerProblem {
     private static final String digits =
             "73167176531330624919225119674426574742355349194934" +
             "96983520312774506326239578318016984801869478851843" +
@@ -23,6 +23,11 @@ public class Problem008 {
     private static final int adjacent = 13;
     
     public static void main(String[] args) {
+        EulerProblem.execute(new Problem008());
+    }
+
+    @Override
+    public long run() {
         long max = 0;
 
         for (int i = 0; i < digits.length() - adjacent - 1; i++) {
@@ -39,7 +44,6 @@ public class Problem008 {
                 max = curr;
             }
         }
-
-        System.out.println(max);
+        return max;
     }
 }

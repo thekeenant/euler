@@ -1,4 +1,4 @@
-public class Problem011 {
+public class Problem011 implements EulerProblem {
     private static final String gridStr =
             "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08\n" +
             "49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00\n" +
@@ -21,14 +21,19 @@ public class Problem011 {
             "20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54\n" +
             "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
-    private static int max = 0;
+    private int result = 0;
 
     public static void main(String[] args) {
+        EulerProblem.execute(new Problem011());
+    }
+
+    @Override
+    public long run() {
         // Convert string to an int matrix
         int[][] grid = new int[20][20];
 
         int i = 0;
-        int j = 0;
+        int j;
 
         for (String row : gridStr.split("\n")) {
             j = 0;
@@ -52,20 +57,20 @@ public class Problem011 {
             }
         }
 
-        System.out.println(max);
+        return result;
     }
 
-    private static void bloop(int[][] grid, int i, int j, int iBloop, int jBloop) {
+    private void bloop(int[][] grid, int i, int j, int iBloop, int jBloop) {
         try {
             int product = grid[i][j];
             product *= grid[i + iBloop][j + jBloop];
             product *= grid[i + iBloop * 2][j + jBloop * 2];
             product *= grid[i + iBloop * 3][j + jBloop * 3];
-            if (product > max) {
-                max = product;
+            if (product > result) {
+                result = product;
             }
         } catch (Exception e) {
-            // Great, efficient coding, I know.
+            // great, efficient coding, I know.
         }
     }
 }

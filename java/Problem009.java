@@ -1,5 +1,10 @@
-public class Problem009 {
+public class Problem009 implements EulerProblem {
     public static void main(String[] args) {
+        EulerProblem.execute(new Problem009());
+    }
+
+    @Override
+    public long run() {
         int big = 1000;
 
         for (int a = 1; a < big; a++) {
@@ -11,12 +16,12 @@ public class Problem009 {
                 if (cReal == (int) cReal) {
                     int c = (int) cReal;
                     if (a + b + cReal == 1000) {
-                        System.out.printf("a = %d, b = %d, c = %d\n", a, b, c);
-                        System.out.printf("abc = %d", a * b * c);
-                        break;
+                        return a * b * c;
                     }
                 }
             }
         }
+
+        throw new RuntimeException("doesn't happen i swear");
     }
 }
