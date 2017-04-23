@@ -1,0 +1,38 @@
+load 'euler_solution.rb'
+
+class Problem002
+  include EulerSolution
+
+  def run
+    fast_fibs.take_while {|i| i < 4_000_000}.select {|i| i % 2 == 0}.sum
+  end
+
+  def fast_fibs
+    Enumerator.new do |y|
+      n1 = 0
+      n2 = 1
+
+      loop do
+        y << n1
+        n1, n2 = n2, n1 + n2
+      end
+    end
+  end
+
+  def fibs
+    Enumerator.new do |y|
+      n = 0
+      loop do
+        y << fib(n)
+        n += 1
+      end
+    end
+  end
+
+  def fib(n)
+    return n if n == 0 || n == 1
+    fib(n - 1) + fib(n - 2)
+  end
+end
+
+execute(Problem002.new)
