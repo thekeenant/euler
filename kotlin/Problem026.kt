@@ -4,6 +4,9 @@ fun main(args: Array<String>) {
     EulerSolution.execute(Problem026())
 }
 
+/**
+ * Not done!
+ */
 class Problem026 : EulerSolution {
     override fun run(): Long {
         val one = BigDecimal.ONE.setScale(2000)
