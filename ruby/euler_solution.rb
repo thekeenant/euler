@@ -10,5 +10,5 @@ def execute(problem)
   end_time = Time.now
 
   puts "Result: #{result}"
-  puts "Time: #{(end_time - start_time) * 1000}ms"
+  puts "Time: #{((end_time - start_time) * 1000).to_i}ms"
 end
