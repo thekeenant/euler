@@ -7,7 +7,7 @@ public class Problem002 implements EulerSolution {
 
     @Override
     public long run() {
-        // note that this requires java 9
+        // takeWhile(...) was included in Java 9 SDK, not Java 8 for some reason.
         return fibs().takeWhile(i -> i < 4_000_000).filter(i -> i % 2 == 0).sum();
     }
 
