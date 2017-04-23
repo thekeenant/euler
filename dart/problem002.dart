@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'euler_solution.dart';
 
 main(List<String> args) {
@@ -9,7 +11,7 @@ class Problem001 extends EulerSolution {
   int run() {
     // Dynamically generate fibonacci sequence
     // it has an arbitrarily large max, we don't generate that much
-    var list = new Iterable<int>.generate(1000000000, (i) => fib(i));
+    var list = new Iterable<int>.generate(pow(2, 20), (i) => fib(i));
     return list
         .takeWhile((i) => i <= 4000000)
         .where((i) => i.isEven)
