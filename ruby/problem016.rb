@@ -1,5 +1,4 @@
 load 'euler_solution.rb'
-require 'date'
 
 class Problem016
   include EulerSolution
