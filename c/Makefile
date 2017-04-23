@@ -1,12 +1,23 @@
+# list of all program sources
 SRCS = $(wildcard problem*.c)
 
-PROGS = $(patsubst %.c,%,$(SRCS))
+BUILD = build
 
+# list of output files (drops the .c extension)
+PROGS = $(SRCS:%.c=$(BUILD)/%)
+
+.PHONY: all
 all: $(PROGS)
 
-%: %.c
-	mkdir -p build
-	$(CC) $(CFLAGS) -o build/$@ $<
+build:
+	mkdir -p $(BUILD)
 
-clean: 
-	rm -f build/
+.INTERMEDIATE: $(notdir $(PROGS))
+.DELETE_ON_ERROR:
+
+$(PROGS): $(BUILD)/%:%|$(BUILD)
+	mv $^ $@
+
+.PHONY: clean
+clean:
+	rm -rf $(BUILD)

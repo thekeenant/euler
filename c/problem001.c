@@ -11,6 +11,5 @@ long long run() {
             sum += i;
         }
     }
-    printf("Test\n");
     return sum;
 }
