@@ -8,7 +8,7 @@ class Problem002
     fast_fibs.take_while {|i| i < 4_000_000}.select {|i| i % 2 == 0}.sum
 
     # ~1500ms
-    fibs.take_while {|i| i < 4_000_000}.select {|i| i % 2 == 0}.sum
+    # fibs.take_while {|i| i < 4_000_000}.select {|i| i % 2 == 0}.sum
   end
 
   def fast_fibs
