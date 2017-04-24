@@ -1,5 +1,4 @@
 #include "euler_solution.c"
-#include <limits.h>
 
 int main() {
     execute(run);
@@ -14,7 +13,8 @@ long long fib(int n) {
 
 long long calc() {
     long long sum = 0;
-    for (int i = 1; i < INT_MAX; i++) {
+    int i = 0;
+    while (1) {
         long curr = fib(i);
         if (curr >= 4000000) {
             break;
@@ -22,6 +22,7 @@ long long calc() {
         if (curr % 2 == 0) {
             sum += curr;
         }
+        i++;
     }
     return sum;
 }
@@ -30,7 +31,7 @@ long long fastCalc() {
     int x = 0;
     int y = 1;
     long long sum = 0;
-    for (int i = 0; i < INT_MAX; i++) {
+    while (1) {
         int curr = x + y;
         x = y;
         y = curr;
