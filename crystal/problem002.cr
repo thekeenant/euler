@@ -1,4 +1,20 @@
-load 'euler_solution.rb'
+require "./euler_solution.cr"
+
+class FastFibs
+  include Iterator(Int32)
+
+  def initialize
+    @x = 0
+    @y = 1
+  end
+
+  def next
+    curr = @x + @y
+    @x = @y
+    @y = curr
+    curr
+  end
+end
 
 class Problem002
   include EulerSolution
@@ -12,25 +28,11 @@ class Problem002
   end
 
   def fast_fibs
-    Enumerator.new do |y|
-      n1 = 0
-      n2 = 1
-
-      loop do
-        y << n1
-        n1, n2 = n2, n1 + n2
-      end
-    end
+    FastFibs.new
   end
 
   def fibs
-    Enumerator.new do |y|
-      n = 0
-      loop do
-        y << fib(n)
-        n += 1
-      end
-    end
+    1.step(by: 1).map{|i| fib(i)}
   end
 
   def fib(n)
