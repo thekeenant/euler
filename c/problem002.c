@@ -12,7 +12,7 @@ long long fib(int n) {
     return fib(n - 1) + fib(n - 2);
 }
 
-long long run() {
+long long calc() {
     long long sum = 0;
     for (int i = 1; i < INT_MAX; i++) {
         long curr = fib(i);
@@ -24,4 +24,32 @@ long long run() {
         }
     }
     return sum;
+}
+
+long long fastCalc() {
+    int x = 0;
+    int y = 1;
+    long long sum = 0;
+    for (int i = 0; i < INT_MAX; i++) {
+        int curr = x + y;
+        x = y;
+        y = curr;
+
+        if (curr >= 4000000) {
+            break;
+        }
+
+        if (curr % 2 == 0) {
+            sum += curr;
+        }
+    }
+    return sum;
+}
+
+long long run() {
+    // ~80ms
+    // return calc();
+
+    // ~0ms
+    return fastCalc();
 }
