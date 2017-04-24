@@ -8,7 +8,7 @@ class Problem002
     fast_fibs.take_while {|i| i < 4_000_000}.select {|i| i % 2 == 0}.sum
 
     # ~1500ms
-    # fibs.take_while {|i| i < 4_000_000}.select {|i| i % 2 == 0}.sum
+    fibs.take_while {|i| i < 4_000_000}.select {|i| i % 2 == 0}.sum
   end
 
   def fast_fibs
@@ -24,13 +24,7 @@ class Problem002
   end
 
   def fibs
-    Enumerator.new do |y|
-      n = 0
-      loop do
-        y << fib(n)
-        n += 1
-      end
-    end
+    1.step(by: 1).lazy.map{|i| fib(i)}
   end
 
   def fib(n)
