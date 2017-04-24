@@ -1,4 +1,4 @@
-load 'euler_solution.rb'
+require './euler_solution.rb'
 
 class Problem016
   include EulerSolution
