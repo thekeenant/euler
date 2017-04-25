@@ -1,9 +1,10 @@
 # list of all program sources
+CC=gcc
+CFLAGS=-Wall
+LDLIBS=-lm
+
 SRCS = $(wildcard problem*.c)
-
 BUILD = build
-
-# list of output files (drops the .c extension)
 PROGS = $(SRCS:%.c=$(BUILD)/%)
 
 .PHONY: all

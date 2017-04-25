@@ -4,6 +4,5 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// implement this in problemXXX.c
 long long run();
-
-void execute(long long (*solution)());

@@ -9,3 +9,7 @@ void execute(long long (*solution)()) {
     printf("Result: %llu\n", result);
     printf("Time: %lums\n", (stop.tv_usec - start.tv_usec) / 1000);
 }
+
+int main() {
+    execute(run);
+}

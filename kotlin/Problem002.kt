@@ -3,7 +3,7 @@ fun main(args: Array<String>) {
 }
 
 class Problem002 : EulerSolution {
-    override fun run(): Long {
+    override fun run() : Long {
         // ~10ms
         return fastFibs().takeWhile{it < 4000000}.filter{it % 2 == 0}.sum().toLong()
 

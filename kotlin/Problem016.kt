@@ -11,7 +11,7 @@ fun Number.digits() : IntStream {
 }
 
 class Problem016 : EulerSolution {
-    override fun run(): Long {
+    override fun run() : Long {
         return BigInteger.valueOf(2).pow(1000).digits().sum().toLong()
     }
 }

@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
  * Not done!
  */
 class Problem026 : EulerSolution {
-    override fun run(): Long {
+    override fun run() : Long {
         val one = BigDecimal.ONE.setScale(2000)
 
         var longest : Int

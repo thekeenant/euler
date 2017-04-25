@@ -1,9 +1,5 @@
 #include "euler_solution.c"
 
-int main() {
-    execute(run);
-}
-
 long long fib(int n) {
     if (n == 0 || n == 1) {
         return n;
