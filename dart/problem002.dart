@@ -15,14 +15,12 @@ class Problem001 extends EulerSolution {
     return list
         .takeWhile((i) => i <= 4000000)
         .where((i) => i.isEven)
-        .fold(0, (a, b) => a + b);
+        .reduce((a, b) => a + b);
   }
 
   int fib(int n) {
-    if (n == 0)
-      return 0;
-    else if (n == 1)
-      return 1;
+    if (n == 0 || n == 1)
+      return n;
     else
       return fib(n - 1) + fib(n - 2);
   }

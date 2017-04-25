@@ -1,4 +1,3 @@
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -13,13 +12,13 @@ public class Problem002 implements EulerSolution {
         // takeWhile(...) was included in Java 9 SDK, not Java 8 for some reason.
 
         // ~20ms
-        return fastFibs().takeWhile(i -> i < 4_000_000).filter(i -> i % 2 == 0).sum();
+        return fastFibs().takeWhile(i -> i < 4_000_000).filter(i -> i % 2 == 0).reduce(0, Integer::sum);
 
         // ~80ms
         // return fibs().takeWhile(i -> i < 4_000_000).filter(i -> i % 2 == 0).sum();
     }
 
-    private IntStream fastFibs() {
+    private Stream<Integer> fastFibs() {
         return Stream.generate(new Supplier<Integer>() {
             private int n1 = 0;
             private int n2 = 1;
@@ -31,7 +30,7 @@ public class Problem002 implements EulerSolution {
                 n2 = result;
                 return result;
             }
-        }).mapToInt(Integer::intValue);
+        });
     }
 
     private IntStream fibs() {
