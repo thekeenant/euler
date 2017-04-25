@@ -5,8 +5,8 @@ class Problem029
 
   def run
     terms = Set(Float64).new
-    (2..10).each do |a|
-      (2..10).each do |b|
+    (2..100).each do |a|
+      (2..100).each do |b|
         terms << a.to_f64 ** b.to_f64
       end
     end
