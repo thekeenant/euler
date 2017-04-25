@@ -8,8 +8,7 @@ class Problem029
     terms = Set.new
     (2..100).each do |a|
       (2..100).each do |b|
-        pow = a**b
-        terms << pow unless terms.include?(pow)
+        terms << a ** b
       end
     end
     terms.size
