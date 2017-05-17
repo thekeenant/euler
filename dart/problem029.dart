@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:collection';
 import 'dart:math';
 
@@ -9,7 +10,7 @@ main(List<String> args) {
 
 class Problem029 extends EulerSolution {
   @override
-  int run() {
+  Future<int> run() async {
     var terms = new HashSet<int>();
 
     for (var a = 2; a <= 100; a++) {

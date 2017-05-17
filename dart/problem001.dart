@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'euler_solution.dart';
 
 main(List<String> args) {
@@ -6,7 +7,7 @@ main(List<String> args) {
 
 class Problem001 extends EulerSolution {
   @override
-  int run() {
+  Future<int> run() async {
     // filter the list for nums divisible by 3 or 5
     // then add them all together
     return new List<int>.generate(999, (i) => i + 1)

@@ -1,11 +1,13 @@
+import 'dart:async';
+
 abstract class EulerSolution {
   static void execute(EulerSolution solution) {
     Stopwatch timer = new Stopwatch()..start();
-    int result = solution.run();
-
-    print("Result: ${result}");
-    print("Time: ${timer.elapsedMilliseconds}ms");
+    solution.run().then((result) {
+      print("Result: ${result}");
+      print("Time: ${timer.elapsedMilliseconds}ms");
+    });
   }
 
-  int run();
+  Future<int> run();
 }
